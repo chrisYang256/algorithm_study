@@ -1,4 +1,5 @@
 # 1부터 n까지 정수의 합 구하기(n값은 양수만 입력)
+# while True:와 break의 조합::: 무한루프 생성 / 빠져나오기 패턴
 
 while True:
     n = int(input('n값을 입력하세요: '))
