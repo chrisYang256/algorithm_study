@@ -9,6 +9,7 @@ def card_conv(x: int, r: int) -> str:
 
     print(f'{r:2} | {x:{n}d}')
     while x > 0:
+        print('x:::', x)
         print('   +' + (n + 2) * '_')
         if x // r:
             print(f'{r:2} | {x // r:{n}d} ··· {x % r}')
