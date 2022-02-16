@@ -1,3 +1,5 @@
+# https://velog.io/@max-sum/algorithm-array-merge-sorted-array
+
 arr1 = [1, 3, 5, 0, 0, 0]
 count1 = 3
 

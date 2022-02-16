@@ -1,3 +1,5 @@
+# https://velog.io/@max-sum/algorithm-array-find-peak-element
+
 arr = [1, 3, 2, 4, 5, 7, 6]
 
 def find_peak_element(nums):

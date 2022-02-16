@@ -1,3 +1,5 @@
+# https://velog.io/@max-sum/algorithm-array-move-zeroes
+
 array = [3, 9, 0, 1, 0, 29, 30]
 
 def move_zero(values):

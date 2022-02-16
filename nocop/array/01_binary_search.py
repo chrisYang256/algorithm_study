@@ -1,3 +1,5 @@
+# https://velog.io/@max-sum/algorithm-binary-search
+
 array = [1, 2, 5, 9, 15, 22, 30]
 
 my_number = int(input('찾으려는 숫자를 입력하세요.: '))

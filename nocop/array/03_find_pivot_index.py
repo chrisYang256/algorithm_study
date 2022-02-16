@@ -1,3 +1,5 @@
+# https://velog.io/@max-sum/algorithm-array-find-pivot-index
+
 array = [8, 2, 1, 9, 3, 6, 2]
 
 def find_pivot_index(values):
