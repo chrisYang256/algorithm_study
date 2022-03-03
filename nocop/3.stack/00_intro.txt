@@ -1,0 +1,2 @@
+- array보다 더 간단한 기본적인 data structure
+- FILO
