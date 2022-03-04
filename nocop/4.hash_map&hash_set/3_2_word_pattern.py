@@ -7,6 +7,7 @@
 패턴이 불일치하여 False가 됩니다.
 해시맵을 통해 쉽게 풀 수 있습니다.
 TC -> O(n), SC -> O(1)
+보충: 해시맵을 문자열 크기만큼 만들어도 공간복잡도가 늘어나지 않는 이유는 key값이 알파벳의 갯수인 26개로 제한되기 때문입니다.
 """
 
 def word_pattern(pattern: str, str: str) -> bool:
@@ -15,19 +16,23 @@ def word_pattern(pattern: str, str: str) -> bool:
     if len(pattern) != len(words):
         return False
 
+    # 교차검증을 위해 해시테이블을 두 개 사용
     char_map = {}
     word_map = {}
     for idx, c in enumerate(pattern):
         word = words[idx]
-        if c not in char_map:
-            if word in word_map: # 짝이 안맞음
+        print(char_map, word_map)
+        if c not in char_map: 
+            if word in word_map and word_map[word] == c:
                 return False
-            else: # 둘 다에 없으면 교차(검증을 위해) 삽입
-                char_map[c] = word
-                word_map[word] = c
+                
+            char_map[c] = word
+            word_map[word] = c
 
-        elif char_map[c] != word: # 기존 해시된 값과 일치하지 않음(패턴 틀어짐)
+        elif char_map[c] != word: # 해당 케릭터의 기존 해시된 값과 일치하지 않음
             return False
+
     return True
 
-print(word_pattern(pattern='coco', str='grape mama grape mamaa'))
+# print(word_pattern(pattern='coco', str='grape mama grape mama'))
+print(word_pattern(pattern='abba', str='dog dog dog dog'))
