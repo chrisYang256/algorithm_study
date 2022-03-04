@@ -26,7 +26,7 @@ def valid_anagram(str1: str, str2: str) -> bool:
     for c in str2:
         is_there = hash_table.get(c)
         if is_there is None:
-            hash_table[c] = 1
+            hash_table[c] = 1 # 비교할 필요 없이 return Flase를 하는게 나음
             continue
         hash_table[c] -= 1
 
