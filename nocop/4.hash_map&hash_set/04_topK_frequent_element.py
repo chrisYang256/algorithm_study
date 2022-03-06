@@ -30,8 +30,8 @@ def freq(nums: List, k: int) -> List:
     keys = []
     for e in table.items():
         keys.append(e)
-    print('t',table)
-    print(keys)
+    print('t', table)
+    print('k', keys)
 
     sort = sorted(keys, key=lambda key: key[1], reverse=True)
 
