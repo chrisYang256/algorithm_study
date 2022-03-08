@@ -34,7 +34,7 @@ def subarraySum(nums: List[int], k: int) -> int:
 
     table = {}
     count = 0
-    # 만약 array 맨 처음부터 시작하여 누계가 k가 되는 케이스가 있다면 앞에 비교대상이 있어야 함
+    # 만약 array 맨 처음부터 시작하여 누계가 k가 되는 케이스가 있다면 앞에 비교대상이 있어야 함(엣지 케이스)
     # k가 10이고 cumalative_sum - k가 0이라면 아래 식과 같은 경우 0이 table에 존재해야 하기 때문에 생성해줘야함.
     table[0] = [-1]  
     for idx, cumalative_sum in enumerate(cumalative_sums):
