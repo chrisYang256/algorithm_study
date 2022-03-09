@@ -7,7 +7,7 @@ TC O(1)을 갖는 insert, remove, getRandom을 impelmentation하라는 복합 �
 
 array와 hash_map을 통해 다음과 같이 각각 O(1)로 구현할 수 있습니다.
 insert는 입력되는 값을 hash map에서 찾고 없는 경우에만 array에 입력합니다.
-getRandom은 사용하는 언어의 기능으로 array에서 추출합니다.
+getRandom은 사용하는 언어의 기능으로 idx를 통해 array에서 추출합니다.
 remove의 경우 hash map에서 O(1)으로 값을 찾을 수 있지만 arr은 좌에서 우로 순회하면 O(n)을 갖습니다.
 그러므로 insert할 때 array에 입력되는 값의 idx를 hash map에 입력해둘 경우
 hash map에서 O(1)으로 찾음/idx를 구해 array에서 삭제할 값을 O(1)로 구할 수 있습니다.
