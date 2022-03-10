@@ -13,6 +13,7 @@ TC는 더미 노드를 만드는 O(1), iterate 하는 O(n), 새로운 시작점�
 SC는 더미 노드를 만드는데 O(1)이 필요합니다.
 """
 
+from multiprocessing import dummy
 from typing import List
 
 
@@ -47,18 +48,36 @@ class ElementRemover:
     def reculsive(self, node: ListNode) -> ListNode:
         if not node:
             return None
-        next_node = self.reculsive(node.next)
+        next_node = self.reculsive(node.next) # 재귀로 다음 노드를 호출 / 리턴
         if node.value == self.__value:
-            return next_node # 이번 값이 삭제할 값이면 다음 노드를 리턴 
+            return next_node # 이번 값이 삭제할 값이면 next_node를 이전 노드에게 넘겨줌
         else:
-            # 이번 값이 삭제할 값이 아니면 다음 노드와 link
+            # 이번 값이 삭제할 값이 아니면 next node를 다음 노드로 넣어줌
+            # 만약 이전 노드가 삭제할 노드였다면 next_node는 삭제할 노드의 다음 노드인 상태이고 아래 식으로 삭제할 노드는 삭제됨 
             node.next = next_node 
             return node # 현재 노드 리턴 
 
+    def iterative(self, node: ListNode) -> ListNode:
+        dummy_head = ListNode(0)
+        dummy_head.next = node # 첫 노드가 삭제할 노드인 경우의 edge case
 
-nodes = create_list([1,3,5,7,3,1])
+        current_node = node
+        previous_node = dummy_head
+        while current_node:
+            if current_node.value == self.__value:
+                previous_node.next = current_node.next # 앞 노드에 뒷 노드를 연결(현재 노드를 삭제)
+                current_node = current_node.next
+            else: # 삭제할 노드가 아니면 포인터만 옮기면 됨
+                previous_node = previous_node.next
+                current_node = current_node.next
+        return dummy_head.next # 더미헤드는 제외
+
+
+nodes = create_list([1,3,5,1,3,1])
 print_nodes(nodes)
 
 remover = ElementRemover(1)
 recursive_rm = remover.reculsive(nodes)
 print_nodes(recursive_rm)
+# iterative_rm = remover.iterative(nodes)
+# print_nodes(iterative_rm)
