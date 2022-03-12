@@ -24,7 +24,7 @@ class ListNode:
 
 def create_list(list: List[int]) -> ListNode:
     if len(list) == 0:
-        return RuntimeError('list is empty')
+        raise RuntimeError('list is empty')
     head_node = ListNode(list[0])
     last_node = head_node
 
