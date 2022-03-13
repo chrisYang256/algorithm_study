@@ -1,5 +1,5 @@
 """
-queue 자료형의 구현은 다음과 같습니다.
+doubly linked list로 구현하는 queue 자료형은 다음과 같습니다.
 """
 
 class QueueNode:

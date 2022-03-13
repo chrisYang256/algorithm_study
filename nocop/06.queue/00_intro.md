@@ -10,3 +10,4 @@
   -> 데이터가 오른쪽에서 들어오면 왼쪽으로 빠지는 data structure이며 doubly linked list와 같습니다.
   -> 처음에 큐를 만들면 head노드와 tail노드가 생성되고 1,2,3의 데이터를 넣으면 doubly linked list가 되고
      첫 노드를 출력하면 head노드와 그다음 노드를 재연결시켜주면 되며 데이터를 삽입할 때는 tail노드쪽에서 같은 방식으로 동작하면 됩니다.
+     singly list로 구현하는 방법 또한 존재합니다.
