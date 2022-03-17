@@ -28,7 +28,7 @@ class Queue:
     def dequeqe(self) -> int:
         first_node = self._head.right
 
-        if first_node == self._tail:
+        if first_node == self._tail: # 노드 없음
             raise RuntimeError('no elem')
 
         value = first_node.val
